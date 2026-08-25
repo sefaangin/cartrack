@@ -1,0 +1,29 @@
+{
+  "status": "OK",
+  "searches": [
+    {
+      "key": "bmw_520_f10",
+      "label": "BMW 520d / 5 Serisi F10",
+      "seen_count": 27,
+      "initialized": true
+    },
+    {
+      "key": "bmw_320_f30",
+      "label": "BMW 320d / 3 Serisi F30",
+      "seen_count": 32,
+      "initialized": true
+    },
+    {
+      "key": "owner_g30",
+      "label": "BMW 5 Serisi G30",
+      "seen_count": 0,
+      "initialized": true
+    },
+    {
+      "key": "owner_w213",
+      "label": "Mercedes-Benz E-Class W213",
+      "seen_count": 0,
+      "initialized": true
+    }
+  ]
+}
