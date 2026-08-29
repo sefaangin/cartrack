@@ -1,0 +1,43 @@
+{
+  "generated_at_utc": "2026-08-29T17:16:22.289781+00:00",
+  "current_count": 20,
+  "last_7_days_count": 3,
+  "rows": [
+    {
+      "id": "42265367",
+      "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드 스포츠",
+      "year": "2016",
+      "mileage": 84787.0,
+      "price_10k_krw": 1290.0,
+      "firstAdvertisedDateTime_utc": "2026-08-29T12:23:31+00:00",
+      "reRegistered": true,
+      "registDateTime_utc": "2026-06-29T00:25:00+00:00",
+      "age_hours": 4.88,
+      "url": "https://fem.encar.com/cars/detail/42265367?listAdvType=share"
+    },
+    {
+      "id": "42611674",
+      "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드 스포츠",
+      "year": "2016",
+      "mileage": 83775.0,
+      "price_10k_krw": 1280.0,
+      "firstAdvertisedDateTime_utc": "2026-08-27T01:17:25+00:00",
+      "reRegistered": false,
+      "registDateTime_utc": "2026-08-26T01:38:20+00:00",
+      "age_hours": 63.98,
+      "url": "https://fem.encar.com/cars/detail/42611674?listAdvType=share"
+    },
+    {
+      "id": "42601987",
+      "title": "벤츠 E-클래스 W212 E220 CDI 아방가르드",
+      "year": "2016",
+      "mileage": 99654.0,
+      "price_10k_krw": 1290.0,
+      "firstAdvertisedDateTime_utc": "2026-08-26T02:42:04+00:00",
+      "reRegistered": false,
+      "registDateTime_utc": "2026-08-25T00:02:15+00:00",
+      "age_hours": 86.57,
+      "url": "https://fem.encar.com/cars/detail/42601987?listAdvType=share"
+    }
+  ]
+}
