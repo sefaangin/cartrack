@@ -1,0 +1,54 @@
+{
+  "status": "OK",
+  "searches": [
+    {
+      "key": "bmw_520_f10",
+      "label": "BMW 520d / 5 Serisi F10",
+      "count": 27,
+      "initialized": true,
+      "new_count": 0,
+      "new": []
+    },
+    {
+      "key": "bmw_320_f30",
+      "label": "BMW 320d / 3 Serisi F30",
+      "count": 32,
+      "initialized": true,
+      "new_count": 0,
+      "new": []
+    },
+    {
+      "key": "owner_g30",
+      "label": "BMW 5 Serisi G30",
+      "count": 0,
+      "initialized": true,
+      "new_count": 0,
+      "new": []
+    },
+    {
+      "key": "owner_w213",
+      "label": "Mercedes-Benz E-Class W213",
+      "count": 0,
+      "initialized": true,
+      "new_count": 0,
+      "new": []
+    },
+    {
+      "key": "owner_audi_a6",
+      "label": "Audi A6 2015/05+",
+      "count": 23,
+      "initialized": true,
+      "new_count": 0,
+      "new": []
+    },
+    {
+      "key": "owner_w212",
+      "label": "Mercedes-Benz E-Class W212 2014+",
+      "count": 20,
+      "initialized": true,
+      "new_count": 0,
+      "new": []
+    }
+  ],
+  "total_new": 0
+}
