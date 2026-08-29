@@ -1,0 +1,117 @@
+{
+  "generated_at_utc": "2026-08-29T16:05:19.599442+00:00",
+  "filters": [
+    {
+      "key": "bmw_520_f10",
+      "label": "BMW 520d / 5 Serisi F10",
+      "current_count": 27,
+      "published_last_24h_count": 0,
+      "published_24_to_48h_count": 1,
+      "published_last_48h_count": 1,
+      "unknown_publish_time_count": 0,
+      "last24": [],
+      "h24_48": [
+        {
+          "id": "38734129",
+          "manufacturer": "BMW",
+          "model": "5시리즈 (F10)",
+          "badge": "520d",
+          "badgeDetail": null,
+          "year": "2015",
+          "mileage": 111359.0,
+          "price_10k_krw": 1250.0,
+          "firstAdvertisedDateTime_utc": "2026-08-27T22:36:48+00:00",
+          "registDateTime_utc": "2024-12-18T03:04:53+00:00",
+          "modifyDateTime_utc": "2026-08-27T22:36:48+00:00",
+          "reRegistered": true,
+          "age_hours": 41.48,
+          "url": "https://fem.encar.com/cars/detail/38734129?listAdvType=share"
+        }
+      ]
+    },
+    {
+      "key": "bmw_320_f30",
+      "label": "BMW 320d / 3 Serisi F30",
+      "current_count": 32,
+      "published_last_24h_count": 0,
+      "published_24_to_48h_count": 1,
+      "published_last_48h_count": 1,
+      "unknown_publish_time_count": 0,
+      "last24": [],
+      "h24_48": [
+        {
+          "id": "42630396",
+          "manufacturer": "BMW",
+          "model": "3시리즈 (F30)",
+          "badge": "320d M 스포츠 쉐도우",
+          "badgeDetail": null,
+          "year": "2018",
+          "mileage": 74955.0,
+          "price_10k_krw": 1320.0,
+          "firstAdvertisedDateTime_utc": "2026-08-28T04:57:14+00:00",
+          "registDateTime_utc": "2026-08-28T04:57:14+00:00",
+          "modifyDateTime_utc": "2026-08-28T05:01:30+00:00",
+          "reRegistered": false,
+          "age_hours": 35.13,
+          "url": "https://fem.encar.com/cars/detail/42630396?listAdvType=share"
+        }
+      ]
+    },
+    {
+      "key": "owner_audi_a6",
+      "label": "Audi A6 2015/05+",
+      "current_count": 23,
+      "published_last_24h_count": 0,
+      "published_24_to_48h_count": 1,
+      "published_last_48h_count": 1,
+      "unknown_publish_time_count": 0,
+      "last24": [],
+      "h24_48": [
+        {
+          "id": "41252309",
+          "manufacturer": "아우디",
+          "model": "뉴 A6",
+          "badge": "40 TDI 콰트로 프리미엄",
+          "badgeDetail": "C7",
+          "year": "2016",
+          "mileage": 102936.0,
+          "price_10k_krw": 1350.0,
+          "firstAdvertisedDateTime_utc": "2026-08-28T12:15:08+00:00",
+          "registDateTime_utc": "2025-12-30T02:25:38+00:00",
+          "modifyDateTime_utc": "2026-08-28T12:15:08+00:00",
+          "reRegistered": true,
+          "age_hours": 27.84,
+          "url": "https://fem.encar.com/cars/detail/41252309?listAdvType=share"
+        }
+      ]
+    },
+    {
+      "key": "owner_w212",
+      "label": "Mercedes-Benz E-Class W212 2014+",
+      "current_count": 20,
+      "published_last_24h_count": 1,
+      "published_24_to_48h_count": 0,
+      "published_last_48h_count": 1,
+      "unknown_publish_time_count": 0,
+      "last24": [
+        {
+          "id": "42265367",
+          "manufacturer": "벤츠",
+          "model": "E-클래스 W212",
+          "badge": "E220 블루텍 아방가르드 스포츠",
+          "badgeDetail": null,
+          "year": "2016",
+          "mileage": 84787.0,
+          "price_10k_krw": 1290.0,
+          "firstAdvertisedDateTime_utc": "2026-08-29T12:23:31+00:00",
+          "registDateTime_utc": "2026-06-29T00:25:00+00:00",
+          "modifyDateTime_utc": "2026-08-29T12:23:31+00:00",
+          "reRegistered": true,
+          "age_hours": 3.7,
+          "url": "https://fem.encar.com/cars/detail/42265367?listAdvType=share"
+        }
+      ],
+      "h24_48": []
+    }
+  ]
+}
