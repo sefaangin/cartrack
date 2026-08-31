@@ -1,0 +1,1162 @@
+{
+  "generated_at_utc": "2026-08-31T19:45:09.681684+00:00",
+  "window_days": 30,
+  "filters": [
+    {
+      "key": "bmw_520_f10",
+      "label": "BMW 520d / 5 Serisi F10",
+      "current_count": 39,
+      "last_30d_count": 26,
+      "rows": [
+        {
+          "id": "38734129",
+          "title": "BMW 5시리즈 (F10) 520d",
+          "year": "2015",
+          "mileage": 111359.0,
+          "price_10k_krw": 1250.0,
+          "firstAdvertisedDateTime_utc": "2026-08-27T22:36:48+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/38734129?listAdvType=share"
+        },
+        {
+          "id": "42260220",
+          "title": "BMW 5시리즈 (F10) 520d",
+          "year": "2015",
+          "mileage": 123690.0,
+          "price_10k_krw": 1160.0,
+          "firstAdvertisedDateTime_utc": "2026-08-27T04:22:32+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42260220?listAdvType=share"
+        },
+        {
+          "id": "42616351",
+          "title": "BMW 5시리즈 (F10) 520d M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 114061.0,
+          "price_10k_krw": 1370.0,
+          "firstAdvertisedDateTime_utc": "2026-08-26T07:54:48+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42616351?listAdvType=share"
+        },
+        {
+          "id": "42613124",
+          "title": "BMW 5시리즈 (F10) 520d xDrive M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 83795.0,
+          "price_10k_krw": 1390.0,
+          "firstAdvertisedDateTime_utc": "2026-08-26T06:10:08+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42613124?listAdvType=share"
+        },
+        {
+          "id": "40748414",
+          "title": "BMW 5시리즈 (F10) 520d xDrive M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 98887.0,
+          "price_10k_krw": 1390.0,
+          "firstAdvertisedDateTime_utc": "2026-08-26T01:09:57+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/40748414?listAdvType=share"
+        },
+        {
+          "id": "42599358",
+          "title": "BMW 5시리즈 (F10) 520d xDrive M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 114709.0,
+          "price_10k_krw": 1299.0,
+          "firstAdvertisedDateTime_utc": "2026-08-25T08:41:22+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42599358?listAdvType=share"
+        },
+        {
+          "id": "42244412",
+          "title": "BMW 5시리즈 (F10) 520d",
+          "year": "2015",
+          "mileage": 111974.0,
+          "price_10k_krw": 1140.0,
+          "firstAdvertisedDateTime_utc": "2026-08-24T12:30:27+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42244412?listAdvType=share"
+        },
+        {
+          "id": "42594798",
+          "title": "BMW 5시리즈 (F10) 520d",
+          "year": "2015",
+          "mileage": 93262.0,
+          "price_10k_krw": 1230.0,
+          "firstAdvertisedDateTime_utc": "2026-08-24T02:21:22+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42594798?listAdvType=share"
+        },
+        {
+          "id": "42586425",
+          "title": "BMW 5시리즈 (F10) 520d M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 117432.0,
+          "price_10k_krw": 1350.0,
+          "firstAdvertisedDateTime_utc": "2026-08-21T06:18:19+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42586425?listAdvType=share"
+        },
+        {
+          "id": "42578619",
+          "title": "BMW 5시리즈 (F10) 520d",
+          "year": "2014",
+          "mileage": 62202.0,
+          "price_10k_krw": 1360.0,
+          "firstAdvertisedDateTime_utc": "2026-08-21T05:22:33+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42578619?listAdvType=share"
+        },
+        {
+          "id": "42573983",
+          "title": "BMW 5시리즈 (F10) 520d M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 96882.0,
+          "price_10k_krw": 1350.0,
+          "firstAdvertisedDateTime_utc": "2026-08-20T00:47:11+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42573983?listAdvType=share"
+        },
+        {
+          "id": "42566779",
+          "title": "BMW 5시리즈 (F10) 520d xDrive 럭셔리",
+          "year": "2014",
+          "mileage": 119376.0,
+          "price_10k_krw": 1069.0,
+          "firstAdvertisedDateTime_utc": "2026-08-18T09:47:28+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42566779?listAdvType=share"
+        },
+        {
+          "id": "42187656",
+          "title": "BMW 5시리즈 (F10) 520d xDrive M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 103907.0,
+          "price_10k_krw": 1400.0,
+          "firstAdvertisedDateTime_utc": "2026-08-16T12:15:22+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42187656?listAdvType=share"
+        },
+        {
+          "id": "42110127",
+          "title": "BMW 5시리즈 (F10) 520d xDrive",
+          "year": "2015",
+          "mileage": 127085.0,
+          "price_10k_krw": 1120.0,
+          "firstAdvertisedDateTime_utc": "2026-08-15T04:56:49+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42110127?listAdvType=share"
+        },
+        {
+          "id": "42553491",
+          "title": "BMW 5시리즈 (F10) 520d",
+          "year": "2015",
+          "mileage": 110993.0,
+          "price_10k_krw": 1240.0,
+          "firstAdvertisedDateTime_utc": "2026-08-14T05:40:48+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42553491?listAdvType=share"
+        },
+        {
+          "id": "42166025",
+          "title": "BMW 5시리즈 (F10) 520d xDrive M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 108122.0,
+          "price_10k_krw": 1270.0,
+          "firstAdvertisedDateTime_utc": "2026-08-12T01:39:42+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42166025?listAdvType=share"
+        },
+        {
+          "id": "42520554",
+          "title": "BMW 5시리즈 (F10) 520d M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 105379.0,
+          "price_10k_krw": 1350.0,
+          "firstAdvertisedDateTime_utc": "2026-08-10T06:03:44+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42520554?listAdvType=share"
+        },
+        {
+          "id": "42518531",
+          "title": "BMW 5시리즈 (F10) 520d M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 129271.0,
+          "price_10k_krw": 1360.0,
+          "firstAdvertisedDateTime_utc": "2026-08-10T05:53:22+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42518531?listAdvType=share"
+        },
+        {
+          "id": "41468302",
+          "title": "BMW 5시리즈 (F10) 520d xDrive",
+          "year": "2014",
+          "mileage": 96310.0,
+          "price_10k_krw": 863.0,
+          "firstAdvertisedDateTime_utc": "2026-08-08T01:28:24+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41468302?listAdvType=share"
+        },
+        {
+          "id": "42509420",
+          "title": "BMW 5시리즈 (F10) 520d M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 126330.0,
+          "price_10k_krw": 1350.0,
+          "firstAdvertisedDateTime_utc": "2026-08-07T05:18:39+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42509420?listAdvType=share"
+        },
+        {
+          "id": "41801281",
+          "title": "BMW 5시리즈 (F10) 520d xDrive 럭셔리 플러스",
+          "year": "2015",
+          "mileage": 100376.0,
+          "price_10k_krw": 1280.0,
+          "firstAdvertisedDateTime_utc": "2026-08-06T12:20:12+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41801281?listAdvType=share"
+        },
+        {
+          "id": "41459238",
+          "title": "BMW 5시리즈 (F10) 520d M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 100025.0,
+          "price_10k_krw": 1360.0,
+          "firstAdvertisedDateTime_utc": "2026-08-06T12:19:45+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41459238?listAdvType=share"
+        },
+        {
+          "id": "42479300",
+          "title": "BMW 5시리즈 (F10) 520d xDrive M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 119950.0,
+          "price_10k_krw": 1240.0,
+          "firstAdvertisedDateTime_utc": "2026-08-05T10:19:16+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42479300?listAdvType=share"
+        },
+        {
+          "id": "42491257",
+          "title": "BMW 5시리즈 (F10) 520d 럭셔리",
+          "year": "2015",
+          "mileage": 118609.0,
+          "price_10k_krw": 970.0,
+          "firstAdvertisedDateTime_utc": "2026-08-05T07:47:37+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42491257?listAdvType=share"
+        },
+        {
+          "id": "41782127",
+          "title": "BMW 5시리즈 (F10) 520d xDrive M 에어로 다이나믹",
+          "year": "2016",
+          "mileage": 119303.0,
+          "price_10k_krw": 1250.0,
+          "firstAdvertisedDateTime_utc": "2026-08-03T22:37:21+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41782127?listAdvType=share"
+        },
+        {
+          "id": "42106989",
+          "title": "BMW 5시리즈 (F10) 520d 럭셔리",
+          "year": "2014",
+          "mileage": 102768.0,
+          "price_10k_krw": 1320.0,
+          "firstAdvertisedDateTime_utc": "2026-08-02T12:16:10+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42106989?listAdvType=share"
+        }
+      ]
+    },
+    {
+      "key": "bmw_320_f30",
+      "label": "BMW 320d / 3 Serisi F30",
+      "current_count": 82,
+      "last_30d_count": 45,
+      "rows": [
+        {
+          "id": "42257382",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2015",
+          "mileage": 95425.0,
+          "price_10k_krw": 950.0,
+          "firstAdvertisedDateTime_utc": "2026-08-31T13:15:19+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42257382?listAdvType=share"
+        },
+        {
+          "id": "42634030",
+          "title": "BMW 3시리즈 (F30) 320d ED에디션",
+          "year": "2015",
+          "mileage": 77009.0,
+          "price_10k_krw": 1250.0,
+          "firstAdvertisedDateTime_utc": "2026-08-31T08:35:33+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42634030?listAdvType=share"
+        },
+        {
+          "id": "42268843",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2018",
+          "mileage": 101337.0,
+          "price_10k_krw": 1390.0,
+          "firstAdvertisedDateTime_utc": "2026-08-31T02:28:23+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42268843?listAdvType=share"
+        },
+        {
+          "id": "42635106",
+          "title": "BMW 3시리즈 (F30) 320d xDrive",
+          "year": "2015",
+          "mileage": 93116.0,
+          "price_10k_krw": 890.0,
+          "firstAdvertisedDateTime_utc": "2026-08-30T02:26:54+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42635106?listAdvType=share"
+        },
+        {
+          "id": "42632649",
+          "title": "BMW 3시리즈 (F30) 320d M 퍼포먼스 에디션",
+          "year": "2015",
+          "mileage": 125739.0,
+          "price_10k_krw": 1299.0,
+          "firstAdvertisedDateTime_utc": "2026-08-28T08:29:13+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42632649?listAdvType=share"
+        },
+        {
+          "id": "42630396",
+          "title": "BMW 3시리즈 (F30) 320d M 스포츠 쉐도우",
+          "year": "2018",
+          "mileage": 74955.0,
+          "price_10k_krw": 1320.0,
+          "firstAdvertisedDateTime_utc": "2026-08-28T04:57:14+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42630396?listAdvType=share"
+        },
+        {
+          "id": "41929008",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2018",
+          "mileage": 116362.0,
+          "price_10k_krw": 1380.0,
+          "firstAdvertisedDateTime_utc": "2026-08-27T12:20:27+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41929008?listAdvType=share"
+        },
+        {
+          "id": "42239824",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2016",
+          "mileage": 122054.0,
+          "price_10k_krw": 1090.0,
+          "firstAdvertisedDateTime_utc": "2026-08-27T09:59:28+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42239824?listAdvType=share"
+        },
+        {
+          "id": "42625508",
+          "title": "BMW 3시리즈 (F30) 320d M 스포츠",
+          "year": "2016",
+          "mileage": 119509.0,
+          "price_10k_krw": 1299.0,
+          "firstAdvertisedDateTime_utc": "2026-08-27T08:23:24+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42625508?listAdvType=share"
+        },
+        {
+          "id": "42331312",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2015",
+          "mileage": 81534.0,
+          "price_10k_krw": 1060.0,
+          "firstAdvertisedDateTime_utc": "2026-08-27T07:37:22+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42331312?listAdvType=share"
+        },
+        {
+          "id": "42623987",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2015",
+          "mileage": 123000.0,
+          "price_10k_krw": 890.0,
+          "firstAdvertisedDateTime_utc": "2026-08-27T07:17:50+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42623987?listAdvType=share"
+        },
+        {
+          "id": "42612208",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2018",
+          "mileage": 113467.0,
+          "price_10k_krw": 1300.0,
+          "firstAdvertisedDateTime_utc": "2026-08-27T05:18:24+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42612208?listAdvType=share"
+        },
+        {
+          "id": "42615773",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2017",
+          "mileage": 114900.0,
+          "price_10k_krw": 1180.0,
+          "firstAdvertisedDateTime_utc": "2026-08-26T06:59:47+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42615773?listAdvType=share"
+        },
+        {
+          "id": "41201088",
+          "title": "BMW 3시리즈 (F30) 320d 스포츠",
+          "year": "2015",
+          "mileage": 94685.0,
+          "price_10k_krw": 1120.0,
+          "firstAdvertisedDateTime_utc": "2026-08-26T01:21:18+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41201088?listAdvType=share"
+        },
+        {
+          "id": "41106203",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2015",
+          "mileage": 96479.0,
+          "price_10k_krw": 1290.0,
+          "firstAdvertisedDateTime_utc": "2026-08-25T13:15:45+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41106203?listAdvType=share"
+        },
+        {
+          "id": "42595544",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2018",
+          "mileage": 74130.0,
+          "price_10k_krw": 1389.0,
+          "firstAdvertisedDateTime_utc": "2026-08-24T08:03:47+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42595544?listAdvType=share"
+        },
+        {
+          "id": "42235523",
+          "title": "BMW 3시리즈 (F30) 320d xDrive",
+          "year": "2016",
+          "mileage": 93546.0,
+          "price_10k_krw": 1050.0,
+          "firstAdvertisedDateTime_utc": "2026-08-23T13:15:41+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42235523?listAdvType=share"
+        },
+        {
+          "id": "42229772",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2016",
+          "mileage": 101585.0,
+          "price_10k_krw": 949.0,
+          "firstAdvertisedDateTime_utc": "2026-08-22T22:03:39+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42229772?listAdvType=share"
+        },
+        {
+          "id": "41886116",
+          "title": "BMW 3시리즈 (F30) 320d ED에디션",
+          "year": "2015",
+          "mileage": 90319.0,
+          "price_10k_krw": 870.0,
+          "firstAdvertisedDateTime_utc": "2026-08-22T16:21:50+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41886116?listAdvType=share"
+        },
+        {
+          "id": "41189095",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2017",
+          "mileage": 104628.0,
+          "price_10k_krw": 1260.0,
+          "firstAdvertisedDateTime_utc": "2026-08-22T15:35:44+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41189095?listAdvType=share"
+        },
+        {
+          "id": "41878112",
+          "title": "BMW 3시리즈 (F30) 320d ED에디션",
+          "year": "2015",
+          "mileage": 119559.0,
+          "price_10k_krw": 970.0,
+          "firstAdvertisedDateTime_utc": "2026-08-22T00:19:16+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41878112?listAdvType=share"
+        },
+        {
+          "id": "41196806",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2018",
+          "mileage": 56354.0,
+          "price_10k_krw": 1385.0,
+          "firstAdvertisedDateTime_utc": "2026-08-21T12:17:42+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41196806?listAdvType=share"
+        },
+        {
+          "id": "42589437",
+          "title": "BMW 3시리즈 (F30) 320d M 퍼포먼스 에디션",
+          "year": "2015",
+          "mileage": 123143.0,
+          "price_10k_krw": 1230.0,
+          "firstAdvertisedDateTime_utc": "2026-08-21T07:29:46+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42589437?listAdvType=share"
+        },
+        {
+          "id": "42588923",
+          "title": "BMW 3시리즈 (F30) 320d xDrive",
+          "year": "2016",
+          "mileage": 127381.0,
+          "price_10k_krw": 1290.0,
+          "firstAdvertisedDateTime_utc": "2026-08-21T06:56:06+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42588923?listAdvType=share"
+        },
+        {
+          "id": "42582378",
+          "title": "BMW 3시리즈 (F30) 320d ED에디션",
+          "year": "2016",
+          "mileage": 127475.0,
+          "price_10k_krw": 1020.0,
+          "firstAdvertisedDateTime_utc": "2026-08-21T06:52:25+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42582378?listAdvType=share"
+        },
+        {
+          "id": "42578713",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2017",
+          "mileage": 122331.0,
+          "price_10k_krw": 1280.0,
+          "firstAdvertisedDateTime_utc": "2026-08-20T05:07:22+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42578713?listAdvType=share"
+        },
+        {
+          "id": "42570448",
+          "title": "BMW 3시리즈 (F30) 320d ED에디션",
+          "year": "2015",
+          "mileage": 111605.0,
+          "price_10k_krw": 950.0,
+          "firstAdvertisedDateTime_utc": "2026-08-19T03:57:00+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42570448?listAdvType=share"
+        },
+        {
+          "id": "40183533",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2015",
+          "mileage": 109890.0,
+          "price_10k_krw": 1077.0,
+          "firstAdvertisedDateTime_utc": "2026-08-19T01:00:10+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/40183533?listAdvType=share"
+        },
+        {
+          "id": "40730923",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2015",
+          "mileage": 126803.0,
+          "price_10k_krw": 900.0,
+          "firstAdvertisedDateTime_utc": "2026-08-16T12:18:21+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/40730923?listAdvType=share"
+        },
+        {
+          "id": "42542164",
+          "title": "BMW 3시리즈 (F30) 320d 스포츠",
+          "year": "2015",
+          "mileage": 72555.0,
+          "price_10k_krw": 1180.0,
+          "firstAdvertisedDateTime_utc": "2026-08-13T02:32:31+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42542164?listAdvType=share"
+        },
+        {
+          "id": "41802391",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2018",
+          "mileage": 103034.0,
+          "price_10k_krw": 1379.0,
+          "firstAdvertisedDateTime_utc": "2026-08-09T23:58:50+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41802391?listAdvType=share"
+        },
+        {
+          "id": "42148970",
+          "title": "BMW 3시리즈 (F30) 320d ED에디션",
+          "year": "2015",
+          "mileage": 116411.0,
+          "price_10k_krw": 800.0,
+          "firstAdvertisedDateTime_utc": "2026-08-09T12:31:31+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42148970?listAdvType=share"
+        },
+        {
+          "id": "41489226",
+          "title": "BMW 3시리즈 (F30) 320d 스포츠",
+          "year": "2015",
+          "mileage": 80021.0,
+          "price_10k_krw": 1130.0,
+          "firstAdvertisedDateTime_utc": "2026-08-09T12:29:06+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41489226?listAdvType=share"
+        },
+        {
+          "id": "40203733",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2015",
+          "mileage": 83320.0,
+          "price_10k_krw": 1250.0,
+          "firstAdvertisedDateTime_utc": "2026-08-09T10:23:36+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/40203733?listAdvType=share"
+        },
+        {
+          "id": "41105614",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2015",
+          "mileage": 106584.0,
+          "price_10k_krw": 1050.0,
+          "firstAdvertisedDateTime_utc": "2026-08-08T00:04:37+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41105614?listAdvType=share"
+        },
+        {
+          "id": "42500265",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2017",
+          "mileage": 69230.0,
+          "price_10k_krw": 1340.0,
+          "firstAdvertisedDateTime_utc": "2026-08-07T09:24:55+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42500265?listAdvType=share"
+        },
+        {
+          "id": "40672263",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2017",
+          "mileage": 129677.0,
+          "price_10k_krw": 1290.0,
+          "firstAdvertisedDateTime_utc": "2026-08-07T08:56:15+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/40672263?listAdvType=share"
+        },
+        {
+          "id": "42501393",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2017",
+          "mileage": 96957.0,
+          "price_10k_krw": 1189.0,
+          "firstAdvertisedDateTime_utc": "2026-08-06T08:05:39+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42501393?listAdvType=share"
+        },
+        {
+          "id": "42499873",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2015",
+          "mileage": 101339.0,
+          "price_10k_krw": 780.0,
+          "firstAdvertisedDateTime_utc": "2026-08-06T07:31:24+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42499873?listAdvType=share"
+        },
+        {
+          "id": "42480890",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2016",
+          "mileage": 124985.0,
+          "price_10k_krw": 1070.0,
+          "firstAdvertisedDateTime_utc": "2026-08-06T01:15:12+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42480890?listAdvType=share"
+        },
+        {
+          "id": "42480764",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2016",
+          "mileage": 114300.0,
+          "price_10k_krw": 1020.0,
+          "firstAdvertisedDateTime_utc": "2026-08-05T08:53:34+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42480764?listAdvType=share"
+        },
+        {
+          "id": "42129932",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2018",
+          "mileage": 89488.0,
+          "price_10k_krw": 1150.0,
+          "firstAdvertisedDateTime_utc": "2026-08-05T08:13:00+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42129932?listAdvType=share"
+        },
+        {
+          "id": "42491862",
+          "title": "BMW 3시리즈 (F30) 320d M 퍼포먼스 에디션",
+          "year": "2015",
+          "mileage": 93319.0,
+          "price_10k_krw": 1390.0,
+          "firstAdvertisedDateTime_utc": "2026-08-05T02:36:20+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42491862?listAdvType=share"
+        },
+        {
+          "id": "41789156",
+          "title": "BMW 3시리즈 (F30) 320d",
+          "year": "2016",
+          "mileage": 121942.0,
+          "price_10k_krw": 1090.0,
+          "firstAdvertisedDateTime_utc": "2026-08-03T12:15:14+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41789156?listAdvType=share"
+        },
+        {
+          "id": "41446031",
+          "title": "BMW 3시리즈 (F30) 320d xDrive",
+          "year": "2015",
+          "mileage": 70757.0,
+          "price_10k_krw": 1250.0,
+          "firstAdvertisedDateTime_utc": "2026-08-02T12:26:28+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41446031?listAdvType=share"
+        }
+      ]
+    },
+    {
+      "key": "owner_g30",
+      "label": "BMW 5 Serisi G30",
+      "current_count": 0,
+      "last_30d_count": 0,
+      "rows": []
+    },
+    {
+      "key": "owner_w213",
+      "label": "Mercedes-Benz E-Class W213",
+      "current_count": 0,
+      "last_30d_count": 0,
+      "rows": []
+    },
+    {
+      "key": "owner_audi_a6",
+      "label": "Audi A6 2015/05+",
+      "current_count": 42,
+      "last_30d_count": 22,
+      "rows": [
+        {
+          "id": "42273082",
+          "title": "아우디 뉴 A6 35 TDI 프리미엄 C7",
+          "year": "2016",
+          "mileage": 125841.0,
+          "price_10k_krw": 1050.0,
+          "firstAdvertisedDateTime_utc": "2026-08-31T02:19:00+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42273082?listAdvType=share"
+        },
+        {
+          "id": "42635440",
+          "title": "아우디 뉴 A6 35 TDI 프리미엄 C7",
+          "year": "2018",
+          "mileage": 125784.0,
+          "price_10k_krw": 1350.0,
+          "firstAdvertisedDateTime_utc": "2026-08-30T09:35:12+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42635440?listAdvType=share"
+        },
+        {
+          "id": "42263583",
+          "title": "아우디 뉴 A6 35 TDI C7",
+          "year": "2016",
+          "mileage": 116387.0,
+          "price_10k_krw": 1390.0,
+          "firstAdvertisedDateTime_utc": "2026-08-29T12:19:22+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42263583?listAdvType=share"
+        },
+        {
+          "id": "41252309",
+          "title": "아우디 뉴 A6 40 TDI 콰트로 프리미엄 C7",
+          "year": "2016",
+          "mileage": 102936.0,
+          "price_10k_krw": 1290.0,
+          "firstAdvertisedDateTime_utc": "2026-08-28T12:15:08+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41252309?listAdvType=share"
+        },
+        {
+          "id": "40384020",
+          "title": "아우디 뉴 A6 35 TDI 프리미엄 C7",
+          "year": "2016",
+          "mileage": 80538.0,
+          "price_10k_krw": 1250.0,
+          "firstAdvertisedDateTime_utc": "2026-08-26T12:17:07+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/40384020?listAdvType=share"
+        },
+        {
+          "id": "42615586",
+          "title": "아우디 뉴 A6 40 TDI 콰트로 프리미엄 C7",
+          "year": "2016",
+          "mileage": 119062.0,
+          "price_10k_krw": 1230.0,
+          "firstAdvertisedDateTime_utc": "2026-08-26T07:10:18+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42615586?listAdvType=share"
+        },
+        {
+          "id": "42600539",
+          "title": "아우디 뉴 A6 45 TDI 콰트로 C7",
+          "year": "2015",
+          "mileage": 88855.0,
+          "price_10k_krw": 1190.0,
+          "firstAdvertisedDateTime_utc": "2026-08-24T09:11:51+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42600539?listAdvType=share"
+        },
+        {
+          "id": "42596946",
+          "title": "아우디 뉴 A6 35 TDI 프리미엄 C7",
+          "year": "2016",
+          "mileage": 127607.0,
+          "price_10k_krw": 1150.0,
+          "firstAdvertisedDateTime_utc": "2026-08-24T06:20:55+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42596946?listAdvType=share"
+        },
+        {
+          "id": "42594651",
+          "title": "아우디 뉴 A6 40 TDI 콰트로 프리미엄 C7",
+          "year": "2016",
+          "mileage": 125315.0,
+          "price_10k_krw": 1170.0,
+          "firstAdvertisedDateTime_utc": "2026-08-24T06:01:37+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42594651?listAdvType=share"
+        },
+        {
+          "id": "42556860",
+          "title": "아우디 뉴 A6 35 TDI 프리미엄 C7",
+          "year": "2016",
+          "mileage": 127586.0,
+          "price_10k_krw": 980.0,
+          "firstAdvertisedDateTime_utc": "2026-08-14T10:52:15+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42556860?listAdvType=share"
+        },
+        {
+          "id": "42550739",
+          "title": "아우디 뉴 A6 35 TDI 프리미엄 C7",
+          "year": "2016",
+          "mileage": 90552.0,
+          "price_10k_krw": 1130.0,
+          "firstAdvertisedDateTime_utc": "2026-08-14T03:21:06+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42550739?listAdvType=share"
+        },
+        {
+          "id": "42132904",
+          "title": "아우디 뉴 A6 40 TDI 콰트로 프리미엄 C7",
+          "year": "2016",
+          "mileage": 113000.0,
+          "price_10k_krw": 1290.0,
+          "firstAdvertisedDateTime_utc": "2026-08-12T00:40:17+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42132904?listAdvType=share"
+        },
+        {
+          "id": "42515792",
+          "title": "아우디 뉴 A6 35 TDI C7",
+          "year": "2016",
+          "mileage": 120591.0,
+          "price_10k_krw": 1320.0,
+          "firstAdvertisedDateTime_utc": "2026-08-11T02:05:55+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42515792?listAdvType=share"
+        },
+        {
+          "id": "41446637",
+          "title": "아우디 뉴 A6 45 TDI 콰트로 C7",
+          "year": "2015",
+          "mileage": 87750.0,
+          "price_10k_krw": 750.0,
+          "firstAdvertisedDateTime_utc": "2026-08-10T02:42:04+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41446637?listAdvType=share"
+        },
+        {
+          "id": "42516248",
+          "title": "아우디 뉴 A6 35 TDI 프리미엄 C7",
+          "year": "2016",
+          "mileage": 83382.0,
+          "price_10k_krw": 1390.0,
+          "firstAdvertisedDateTime_utc": "2026-08-10T01:31:12+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42516248?listAdvType=share"
+        },
+        {
+          "id": "42497895",
+          "title": "아우디 뉴 A6 35 TDI 콰트로 프리미엄 C7",
+          "year": "2016",
+          "mileage": 93884.0,
+          "price_10k_krw": 1250.0,
+          "firstAdvertisedDateTime_utc": "2026-08-07T00:51:12+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42497895?listAdvType=share"
+        },
+        {
+          "id": "42502769",
+          "title": "아우디 뉴 A6 35 TDI 콰트로 프리미엄 C7",
+          "year": "2016",
+          "mileage": 106149.0,
+          "price_10k_krw": 1150.0,
+          "firstAdvertisedDateTime_utc": "2026-08-06T07:54:33+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42502769?listAdvType=share"
+        },
+        {
+          "id": "42483961",
+          "title": "아우디 뉴 A6 40 TDI 콰트로 프리미엄 C7",
+          "year": "2016",
+          "mileage": 110126.0,
+          "price_10k_krw": 1220.0,
+          "firstAdvertisedDateTime_utc": "2026-08-05T02:00:31+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42483961?listAdvType=share"
+        },
+        {
+          "id": "42489025",
+          "title": "아우디 뉴 A6 40 TDI 콰트로 프리미엄 C7",
+          "year": "2016",
+          "mileage": 110966.0,
+          "price_10k_krw": 1249.0,
+          "firstAdvertisedDateTime_utc": "2026-08-05T01:46:20+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42489025?listAdvType=share"
+        },
+        {
+          "id": "41787268",
+          "title": "아우디 뉴 A6 35 TDI C7",
+          "year": "2016",
+          "mileage": 84663.0,
+          "price_10k_krw": 1180.0,
+          "firstAdvertisedDateTime_utc": "2026-08-05T01:42:49+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41787268?listAdvType=share"
+        },
+        {
+          "id": "41780659",
+          "title": "아우디 뉴 A6 40 TDI 콰트로 프리미엄 C7",
+          "year": "2016",
+          "mileage": 107426.0,
+          "price_10k_krw": 1320.0,
+          "firstAdvertisedDateTime_utc": "2026-08-03T16:19:03+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41780659?listAdvType=share"
+        },
+        {
+          "id": "41786438",
+          "title": "아우디 뉴 A6 40 TDI 콰트로 프리미엄 C7",
+          "year": "2016",
+          "mileage": 105882.0,
+          "price_10k_krw": 1280.0,
+          "firstAdvertisedDateTime_utc": "2026-08-03T12:16:28+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41786438?listAdvType=share"
+        }
+      ]
+    },
+    {
+      "key": "owner_w212",
+      "label": "Mercedes-Benz E-Class W212 2014+",
+      "current_count": 34,
+      "last_30d_count": 18,
+      "rows": [
+        {
+          "id": "42265367",
+          "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드 스포츠",
+          "year": "2016",
+          "mileage": 84787.0,
+          "price_10k_krw": 1290.0,
+          "firstAdvertisedDateTime_utc": "2026-08-29T12:23:31+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42265367?listAdvType=share"
+        },
+        {
+          "id": "42611674",
+          "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드 스포츠",
+          "year": "2016",
+          "mileage": 83775.0,
+          "price_10k_krw": 1230.0,
+          "firstAdvertisedDateTime_utc": "2026-08-27T01:17:25+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42611674?listAdvType=share"
+        },
+        {
+          "id": "42232372",
+          "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드 스포츠",
+          "year": "2015",
+          "mileage": 113626.0,
+          "price_10k_krw": 870.0,
+          "firstAdvertisedDateTime_utc": "2026-08-26T03:25:50+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42232372?listAdvType=share"
+        },
+        {
+          "id": "42601987",
+          "title": "벤츠 E-클래스 W212 E220 CDI 아방가르드",
+          "year": "2016",
+          "mileage": 99654.0,
+          "price_10k_krw": 1290.0,
+          "firstAdvertisedDateTime_utc": "2026-08-26T02:42:04+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42601987?listAdvType=share"
+        },
+        {
+          "id": "42256696",
+          "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드 스포츠",
+          "year": "2015",
+          "mileage": 127332.0,
+          "price_10k_krw": 950.0,
+          "firstAdvertisedDateTime_utc": "2026-08-25T12:30:23+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42256696?listAdvType=share"
+        },
+        {
+          "id": "42244421",
+          "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드",
+          "year": "2016",
+          "mileage": 115976.0,
+          "price_10k_krw": 1180.0,
+          "firstAdvertisedDateTime_utc": "2026-08-24T12:23:40+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42244421?listAdvType=share"
+        },
+        {
+          "id": "42589992",
+          "title": "벤츠 E-클래스 W212 E350 블루텍 4MATIC",
+          "year": "2016",
+          "mileage": 117019.0,
+          "price_10k_krw": 1290.0,
+          "firstAdvertisedDateTime_utc": "2026-08-21T12:26:44+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42589992?listAdvType=share"
+        },
+        {
+          "id": "42577801",
+          "title": "벤츠 E-클래스 W212 E250 CDI 4MATIC",
+          "year": "2014",
+          "mileage": 87000.0,
+          "price_10k_krw": 1050.0,
+          "firstAdvertisedDateTime_utc": "2026-08-20T03:28:12+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42577801?listAdvType=share"
+        },
+        {
+          "id": "42560496",
+          "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드 스포츠",
+          "year": "2016",
+          "mileage": 129956.0,
+          "price_10k_krw": 1150.0,
+          "firstAdvertisedDateTime_utc": "2026-08-18T04:51:10+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42560496?listAdvType=share"
+        },
+        {
+          "id": "42554870",
+          "title": "벤츠 E-클래스 W212 E250 블루텍 4MATIC 아방가르드",
+          "year": "2015",
+          "mileage": 105560.0,
+          "price_10k_krw": 1020.0,
+          "firstAdvertisedDateTime_utc": "2026-08-14T06:35:55+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42554870?listAdvType=share"
+        },
+        {
+          "id": "42549042",
+          "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드",
+          "year": "2016",
+          "mileage": 78497.0,
+          "price_10k_krw": 1290.0,
+          "firstAdvertisedDateTime_utc": "2026-08-14T03:14:41+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42549042?listAdvType=share"
+        },
+        {
+          "id": "42171300",
+          "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드",
+          "year": "2015",
+          "mileage": 85818.0,
+          "price_10k_krw": 1190.0,
+          "firstAdvertisedDateTime_utc": "2026-08-13T05:39:34+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42171300?listAdvType=share"
+        },
+        {
+          "id": "42531097",
+          "title": "벤츠 E-클래스 W212 E250 블루텍 4MATIC 아방가르드",
+          "year": "2016",
+          "mileage": 98382.0,
+          "price_10k_krw": 1100.0,
+          "firstAdvertisedDateTime_utc": "2026-08-12T05:00:07+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42531097?listAdvType=share"
+        },
+        {
+          "id": "42140691",
+          "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드",
+          "year": "2016",
+          "mileage": 123106.0,
+          "price_10k_krw": 1060.0,
+          "firstAdvertisedDateTime_utc": "2026-08-09T15:52:30+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42140691?listAdvType=share"
+        },
+        {
+          "id": "41468755",
+          "title": "벤츠 E-클래스 W212 E250 CDI 4MATIC",
+          "year": "2014",
+          "mileage": 85158.0,
+          "price_10k_krw": 1090.0,
+          "firstAdvertisedDateTime_utc": "2026-08-08T12:20:41+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41468755?listAdvType=share"
+        },
+        {
+          "id": "42114040",
+          "title": "벤츠 E-클래스 W212 E220 CDI 아방가르드",
+          "year": "2014",
+          "mileage": 99501.0,
+          "price_10k_krw": 1150.0,
+          "firstAdvertisedDateTime_utc": "2026-08-04T12:27:32+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/42114040?listAdvType=share"
+        },
+        {
+          "id": "42473710",
+          "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드",
+          "year": "2016",
+          "mileage": 107008.0,
+          "price_10k_krw": 1199.0,
+          "firstAdvertisedDateTime_utc": "2026-08-03T00:32:16+00:00",
+          "reRegistered": false,
+          "url": "https://fem.encar.com/cars/detail/42473710?listAdvType=share"
+        },
+        {
+          "id": "41765506",
+          "title": "벤츠 E-클래스 W212 E220 블루텍 아방가르드",
+          "year": "2016",
+          "mileage": 119413.0,
+          "price_10k_krw": 1300.0,
+          "firstAdvertisedDateTime_utc": "2026-08-02T03:43:58+00:00",
+          "reRegistered": true,
+          "url": "https://fem.encar.com/cars/detail/41765506?listAdvType=share"
+        }
+      ]
+    }
+  ]
+}
