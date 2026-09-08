@@ -1,0 +1,45 @@
+{
+  "w204_2014": {
+    "Count": 4,
+    "results_len": 4,
+    "samples": [
+      {
+        "Id": "42359463",
+        "Model": "C-클래스 W204",
+        "Badge": "C220 CDI",
+        "FormYear": "2014",
+        "Mileage": 103118.0,
+        "Price": 569.0
+      },
+      {
+        "Id": "41653620",
+        "Model": "C-클래스 W204",
+        "Badge": "C220 CDI 4MATIC 에디션 C",
+        "FormYear": "2014",
+        "Mileage": 91191.0,
+        "Price": 790.0
+      },
+      {
+        "Id": "41327687",
+        "Model": "C-클래스 W204",
+        "Badge": "C220 CDI",
+        "FormYear": "2014",
+        "Mileage": 114837.0,
+        "Price": 590.0
+      },
+      {
+        "Id": "42009307",
+        "Model": "C-클래스 W204",
+        "Badge": "C220 CDI",
+        "FormYear": "2014",
+        "Mileage": 128108.0,
+        "Price": 499.0
+      }
+    ]
+  },
+  "w205_to_2016": {
+    "Count": 0,
+    "results_len": 0,
+    "samples": []
+  }
+}
