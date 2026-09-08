@@ -1,0 +1,134 @@
+name: Migrate W205 2017 9M
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/migrate_w205_2017_9m.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: macos-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout application
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: true
+      - name: Checkout encrypted state
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: state
+          path: .state
+          persist-credentials: true
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Update W205 filter and state
+        env:
+          SEARCHES_JSON: ${{ secrets.searchesjson }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.telegrambot }}
+          STATE_ENCRYPTION_KEY: ${{ secrets.statekey }}
+          CARTRACK_STATE_FILE: .state/state.enc
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          import watcher
+
+          target='owner_c_w205_to_2016'
+          extra_path=Path('owner_extra_searches.json')
+          extra=json.loads(extra_path.read_text(encoding='utf-8'))
+          rows=extra.get('searches',[])
+          if sum(1 for x in rows if x.get('key')==target)!=1:
+              raise SystemExit('expected exactly one W205 search')
+
+          replacement={
+            'key': target,
+            'label': 'Mercedes-Benz C-Class W205 <=2017',
+            'search_url': 'https://car.encar.com/list/car?page=1&search=%7B%22type%22%3A%22car%22%2C%22action%22%3A%22%28And.Hidden.N._.MultiViewHidden.N._.SellType.%EC%9D%BC%EB%B0%98._.%28Or.Separation.B._.Separation.F.%29_.ServiceCopyCar.ORIGINAL._.Mileage.range%28..130000%29._.Price.range%28..800%29._.%28C.CarType.N._.%28C.Manufacturer.%EB%B2%A4%EC%B8%A0._.%28C.ModelGroup.C-%ED%81%B4%EB%9E%98%EC%8A%A4._.Model.C-%ED%81%B4%EB%9E%98%EC%8A%A4+W205.%29%29%29_.Year.range%28201400..201799%29.%29%22%2C%22title%22%3A%22Mercedes-Benz+C-Class+W205+%3C%3D2017%22%2C%22toggle%22%3A%7B%7D%2C%22layer%22%3A%22%22%2C%22sort%22%3A%22MobileModifiedDate%22%7D'
+          }
+          new_rows=[replacement if x.get('key')==target else x for x in rows]
+          new_extra=dict(extra); new_extra['searches']=new_rows
+
+          base=json.loads(os.environ['SEARCHES_JSON'])
+          merged=dict(base); merged['searches']=list(base['searches'])+new_rows
+          os.environ['SEARCHES_JSON']=json.dumps(merged,ensure_ascii=False,separators=(',',':'))
+          config=watcher.load_config()
+          spec=next(s for s in config.searches if s.key==target)
+          if 'Year.range(201400..201799)' not in spec.action:
+              raise SystemExit('W205 year range not applied')
+          if 'Price.range(..900)' not in spec.action:
+              raise SystemExit('W205 effective 9M price cap not applied')
+          if 'Mileage.range(..130000)' not in spec.action:
+              raise SystemExit('W205 mileage cap changed unexpectedly')
+
+          secret=watcher.state_secret()
+          state=watcher.decrypt_state(watcher.STATE_FILE.read_bytes(),secret)
+          if state.get('version') != watcher.STATE_VERSION:
+              raise SystemExit('unexpected state version')
+          existing_rows=state.get('searches',{})
+          if not isinstance(existing_rows,dict):
+              raise SystemExit('invalid state searches')
+          other_snapshot={k:set(v.get('seen',[])) for k,v in existing_rows.items() if k!=target and isinstance(v,dict)}
+          old_target=existing_rows.get(target,{}) if isinstance(existing_rows.get(target,{}),dict) else {}
+          old_seen=set(old_target.get('seen',[]))
+
+          session=watcher.requests.Session()
+          watcher.bootstrap(session)
+          current=watcher.fetch_search(session,spec)
+          hmac_key=watcher.derive_key(secret,'cartrack-listing-hmac-v1')
+          current_hashes={watcher.digest_id(car['Id'],hmac_key) for car in current}
+
+          state['config_fingerprint']=watcher.config_fingerprint(config)
+          state['searches'][target]={
+            'initialized': True,
+            'seen': sorted(old_seen | current_hashes),
+            'fetch_failing': False,
+            'delivery_failing': False,
+          }
+          watcher.save_state(state,secret)
+
+          verify=watcher.decrypt_state(watcher.STATE_FILE.read_bytes(),secret)
+          for key,seen in other_snapshot.items():
+              if seen != set(verify['searches'].get(key,{}).get('seen',[])):
+                  raise SystemExit(f'history changed for {key}')
+          if verify.get('config_fingerprint') != watcher.config_fingerprint(config):
+              raise SystemExit('fingerprint migration failed')
+
+          report={
+            'status':'OK',
+            'w205_current_results':len(current),
+            'w205_old_seen_count':len(old_seen),
+            'w205_new_seen_count':len(old_seen|current_hashes),
+            'total_searches':len(config.searches),
+            'other_histories_preserved':True,
+            'effective_year_range':'2014-2017',
+            'effective_price_cap_krw':9000000,
+            'effective_mileage_cap_km':130000
+          }
+          Path('.state/w205-2017-9m-report.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+          extra_path.write_text(json.dumps(new_extra,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add owner_extra_searches.json
+          git commit -m 'set W205 to 2017 and 9M'
+          git push origin HEAD:main
+
+          cd .state
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add state.enc w205-2017-9m-report.json
+          git commit -m 'migrate W205 2017 9M state'
+          git pull --rebase origin state
+          git push origin HEAD:state
