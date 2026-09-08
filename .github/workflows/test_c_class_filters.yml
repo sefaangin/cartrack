@@ -36,8 +36,8 @@ jobs:
           import watcher
 
           qs = {
-            'w204_2014': '(And.Hidden.N._.MultiViewHidden.N._.SellType.일반._.(Or.Separation.B._.Separation.F.)_.ServiceCopyCar.ORIGINAL._.Mileage.range(..130000)._.Price.range(..800)._.(C.CarType.N._.(C.Manufacturer.벤츠._.(C.ModelGroup.C-클래스._.(C.Model.C-클래스 W204.))))_.Year.range(201400..201499).)',
-            'w205_to_2016': '(And.Hidden.N._.MultiViewHidden.N._.SellType.일반._.(Or.Separation.B._.Separation.F.)_.ServiceCopyCar.ORIGINAL._.Mileage.range(..130000)._.Price.range(..800)._.(C.CarType.N._.(C.Manufacturer.벤츠._.(C.ModelGroup.C-클래스._.(C.Model.C-클래스 W205.))))_.Year.range(201400..201699).)',
+            'w204_2014': '(And.Hidden.N._.MultiViewHidden.N._.SellType.일반._.(Or.Separation.B._.Separation.F.)_.ServiceCopyCar.ORIGINAL._.Mileage.range(..130000)._.Price.range(..800)._.(C.CarType.N._.(C.Manufacturer.벤츠._.(C.ModelGroup.C-클래스._.Model.C-클래스 W204.)))_.Year.range(201400..201499).)',
+            'w205_to_2016': '(And.Hidden.N._.MultiViewHidden.N._.SellType.일반._.(Or.Separation.B._.Separation.F.)_.ServiceCopyCar.ORIGINAL._.Mileage.range(..130000)._.Price.range(..800)._.(C.CarType.N._.(C.Manufacturer.벤츠._.(C.ModelGroup.C-클래스._.Model.C-클래스 W205.)))_.Year.range(201400..201699).)',
           }
           session=requests.Session(); watcher.bootstrap(session)
           out={}
