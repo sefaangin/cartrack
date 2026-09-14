@@ -58,8 +58,8 @@ jobs:
 
   watch:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.event.head_commit.message == 'hourly cartrack trigger')
-    runs-on: macos-latest
-    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
     permissions:
       contents: write
     steps:
@@ -114,25 +114,57 @@ jobs:
           if [[ "$mode" == "watch" ]]; then
             python - <<'PY'
           import logging
+          import time
+          import requests
           import watcher
 
           original_send_telegram = watcher.send_telegram
-          original_api_get = watcher.api_get
           logger = logging.getLogger("cartrack")
 
           def logged_send_telegram(text: str) -> None:
               logger.info("CARTRACK_NOTIFICATION_BEGIN\n%s\nCARTRACK_NOTIFICATION_END", text)
               original_send_telegram(text)
 
-          def logged_api_get(session, params):
-              try:
-                  return original_api_get(session, params)
-              except Exception as exc:
-                  logger.error("ENCAR_API_FINAL_ERROR: %s: %s", type(exc).__name__, exc)
-                  raise
+          def diagnostic_api_get(session, params):
+              attempts = 3
+              last_error = None
+              for attempt in range(attempts):
+                  try:
+                      response = session.get(
+                          watcher.API_URL,
+                          params=params,
+                          headers=watcher.API_HEADERS,
+                          timeout=(8, 12),
+                      )
+                      body_sample = response.text[:240].replace("\n", " ").replace("\r", " ")
+                      logger.info(
+                          "ENCAR_API_RESPONSE attempt=%d status=%s url=%s body_sample=%s",
+                          attempt + 1,
+                          response.status_code,
+                          response.url,
+                          body_sample,
+                      )
+                      if response.status_code != 200:
+                          raise RuntimeError(f"Search API HTTP {response.status_code}; body={body_sample}")
+                      data = response.json()
+                      if not isinstance(data, dict):
+                          raise RuntimeError("Search API returned non-object JSON")
+                      return data
+                  except (requests.RequestException, ValueError, RuntimeError) as exc:
+                      last_error = exc
+                      logger.warning(
+                          "ENCAR_API_ATTEMPT_FAILED attempt=%d/%d error_type=%s error=%s",
+                          attempt + 1,
+                          attempts,
+                          type(exc).__name__,
+                          exc,
+                      )
+                      if attempt < attempts - 1:
+                          time.sleep(3 * (attempt + 1))
+              raise RuntimeError(f"Search request failed after {attempts} attempts: {last_error}")
 
           watcher.send_telegram = logged_send_telegram
-          watcher.api_get = logged_api_get
+          watcher.api_get = diagnostic_api_get
           watcher.run_watch(dry_run=False)
           PY
           else
