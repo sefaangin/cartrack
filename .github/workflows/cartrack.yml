@@ -121,6 +121,15 @@ jobs:
           original_send_telegram = watcher.send_telegram
           logger = logging.getLogger("cartrack")
 
+          watcher.API_HEADERS.update({
+              "origin": "https://car.encar.com",
+              "referer": "https://car.encar.com/",
+              "x-requested-with": "XMLHttpRequest",
+              "sec-fetch-site": "same-site",
+              "sec-fetch-mode": "cors",
+              "sec-fetch-dest": "empty",
+          })
+
           def logged_send_telegram(text: str) -> None:
               logger.info("CARTRACK_NOTIFICATION_BEGIN\n%s\nCARTRACK_NOTIFICATION_END", text)
               original_send_telegram(text)
