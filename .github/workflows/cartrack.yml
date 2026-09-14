@@ -2,7 +2,7 @@ name: Cartrack
 
 on:
   schedule:
-    - cron: '7 * * * *'
+    - cron: '41 * * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -117,13 +117,22 @@ jobs:
           import watcher
 
           original_send_telegram = watcher.send_telegram
+          original_api_get = watcher.api_get
           logger = logging.getLogger("cartrack")
 
           def logged_send_telegram(text: str) -> None:
               logger.info("CARTRACK_NOTIFICATION_BEGIN\n%s\nCARTRACK_NOTIFICATION_END", text)
               original_send_telegram(text)
 
+          def logged_api_get(session, params):
+              try:
+                  return original_api_get(session, params)
+              except Exception as exc:
+                  logger.error("ENCAR_API_FINAL_ERROR: %s: %s", type(exc).__name__, exc)
+                  raise
+
           watcher.send_telegram = logged_send_telegram
+          watcher.api_get = logged_api_get
           watcher.run_watch(dry_run=False)
           PY
           else
