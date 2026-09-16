@@ -117,6 +117,9 @@ jobs:
           import logging
           import os
           import re
+          import shutil
+          import subprocess
+          import tempfile
           import time
           from urllib.parse import quote
 
@@ -141,6 +144,9 @@ jobs:
           def logged_send_telegram(text: str) -> None:
               logger.info("CARTRACK_NOTIFICATION_BEGIN\n%s\nCARTRACK_NOTIFICATION_END", text)
               original_send_telegram(text)
+
+          def find_ids(text: str) -> list[str]:
+              return sorted(set(re.findall(r"(?:cars/detail/|carid=|\\\"Id\\\"\\s*:)\\s*(\\d{7,9})", text)))[:20]
 
           def describe_response(prefix, response):
               body_sample = response.text[:300].replace("\n", " ").replace("\r", " ")
@@ -173,6 +179,47 @@ jobs:
                   json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
               )
 
+          def probe_chrome_dom(url):
+              chrome = (
+                  shutil.which("google-chrome")
+                  or shutil.which("google-chrome-stable")
+                  or shutil.which("chromium")
+                  or shutil.which("chromium-browser")
+              )
+              logger.info("ENCAR_CHROME_BINARY path=%s", chrome)
+              if not chrome:
+                  return
+              try:
+                  result = subprocess.run(
+                      [
+                          chrome,
+                          "--headless=new",
+                          "--disable-gpu",
+                          "--no-sandbox",
+                          "--disable-dev-shm-usage",
+                          "--virtual-time-budget=12000",
+                          "--dump-dom",
+                          url,
+                      ],
+                      capture_output=True,
+                      text=True,
+                      timeout=35,
+                  )
+                  ids = find_ids(result.stdout)
+                  sample = result.stdout[:300].replace("\n", " ").replace("\r", " ")
+                  stderr_sample = result.stderr[:300].replace("\n", " ").replace("\r", " ")
+                  logger.info(
+                      "ENCAR_CHROME_DOM returncode=%s stdout_len=%d ids_found=%d sample_ids=%s body_sample=%s stderr_sample=%s",
+                      result.returncode,
+                      len(result.stdout),
+                      len(ids),
+                      ids[:10],
+                      sample,
+                      stderr_sample,
+                  )
+              except Exception as exc:
+                  logger.warning("ENCAR_CHROME_DOM_FAILED error_type=%s error=%s", type(exc).__name__, exc)
+
           def probe_direct_page(spec, prefix="ENCAR_PAGE_RESPONSE"):
               if upstream["page_probe_done"] and prefix == "ENCAR_PAGE_RESPONSE":
                   return
@@ -187,8 +234,10 @@ jobs:
                       allow_redirects=True,
                   )
                   describe_response(prefix, response)
-                  ids = sorted(set(re.findall(r"(?:cars/detail/|carid=|\\\"Id\\\"\\s*:)\\s*(\\d{7,9})", response.text)))[:20]
+                  ids = find_ids(response.text)
                   logger.info("%s_IDS_FOUND count=%d sample=%s", prefix, len(ids), ids[:10])
+                  if not ids:
+                      probe_chrome_dom(url)
               except Exception as exc:
                   logger.warning("%s_FAILED error_type=%s error=%s", prefix, type(exc).__name__, exc)
 
