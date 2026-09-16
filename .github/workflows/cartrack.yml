@@ -2,7 +2,7 @@ name: Cartrack
 
 on:
   schedule:
-    - cron: '41 * * * *'
+    - cron: '17 */6 * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -34,7 +34,7 @@ on:
 
 concurrency:
   group: cartrack-${{ github.repository }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -59,7 +59,7 @@ jobs:
   watch:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.event.head_commit.message == 'hourly cartrack trigger')
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 4
     permissions:
       contents: write
     steps:
@@ -118,8 +118,10 @@ jobs:
           import requests
           import watcher
 
-          original_send_telegram = watcher.send_telegram
           logger = logging.getLogger("cartrack")
+          original_send_telegram = watcher.send_telegram
+          original_process_search = watcher.process_search
+          upstream = {"cloudfront_403": False}
 
           watcher.API_HEADERS.update({
               "origin": "https://car.encar.com",
@@ -135,7 +137,7 @@ jobs:
               original_send_telegram(text)
 
           def diagnostic_api_get(session, params):
-              attempts = 3
+              attempts = 2
               last_error = None
               for attempt in range(attempts):
                   try:
@@ -145,14 +147,24 @@ jobs:
                           headers=watcher.API_HEADERS,
                           timeout=(8, 12),
                       )
-                      body_sample = response.text[:240].replace("\n", " ").replace("\r", " ")
+                      body_sample = response.text[:300].replace("\n", " ").replace("\r", " ")
+                      server = response.headers.get("server", "")
+                      x_cache = response.headers.get("x-cache", "")
+                      via = response.headers.get("via", "")
                       logger.info(
-                          "ENCAR_API_RESPONSE attempt=%d status=%s url=%s body_sample=%s",
+                          "ENCAR_API_RESPONSE attempt=%d status=%s server=%s x_cache=%s via=%s body_sample=%s",
                           attempt + 1,
                           response.status_code,
-                          response.url,
+                          server,
+                          x_cache,
+                          via,
                           body_sample,
                       )
+                      marker = " ".join([server, x_cache, via, body_sample]).lower()
+                      if response.status_code == 403 and (
+                          "cloudfront" in marker or "the request could not be satisfied" in marker
+                      ):
+                          upstream["cloudfront_403"] = True
                       if response.status_code != 200:
                           raise RuntimeError(f"Search API HTTP {response.status_code}; body={body_sample}")
                       data = response.json()
@@ -172,9 +184,29 @@ jobs:
                           time.sleep(3 * (attempt + 1))
               raise RuntimeError(f"Search request failed after {attempts} attempts: {last_error}")
 
+          def circuit_process_search(*args, **kwargs):
+              spec = kwargs.get("spec") or args[3]
+              if upstream["cloudfront_403"]:
+                  logger.warning(
+                      "Skipping %s because Encar CloudFront 403 was already detected in this run",
+                      spec.label,
+                  )
+                  return None, True, False
+              return original_process_search(*args, **kwargs)
+
           watcher.send_telegram = logged_send_telegram
           watcher.api_get = diagnostic_api_get
-          watcher.run_watch(dry_run=False)
+          watcher.process_search = circuit_process_search
+
+          try:
+              watcher.run_watch(dry_run=False)
+          except RuntimeError:
+              if upstream["cloudfront_403"]:
+                  logger.warning(
+                      "Encar CloudFront 403 detected. State preserved; exiting successfully to avoid repeated GitHub failure emails."
+                  )
+              else:
+                  raise
           PY
           else
             python watcher.py "$mode"
