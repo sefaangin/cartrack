@@ -2,7 +2,7 @@ name: Cartrack
 
 on:
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '41 * * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -59,7 +59,7 @@ jobs:
   watch:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.event.head_commit.message == 'hourly cartrack trigger')
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 6
     permissions:
       contents: write
     steps:
@@ -113,15 +113,21 @@ jobs:
 
           if [[ "$mode" == "watch" ]]; then
             python - <<'PY'
+          import json
           import logging
+          import os
+          import re
           import time
-          import requests
+          from urllib.parse import quote
+
+          from curl_cffi import requests as curl_requests
           import watcher
 
           logger = logging.getLogger("cartrack")
-          original_send_telegram = watcher.send_telegram
           original_process_search = watcher.process_search
-          upstream = {"cloudfront_403": False}
+          original_send_telegram = watcher.send_telegram
+          browser_session = curl_requests.Session(impersonate=os.getenv("CARTRACK_CURL_IMPERSONATE", "chrome"))
+          upstream = {"cloudfront_403": False, "page_probe_done": False}
 
           watcher.API_HEADERS.update({
               "origin": "https://car.encar.com",
@@ -136,42 +142,76 @@ jobs:
               logger.info("CARTRACK_NOTIFICATION_BEGIN\n%s\nCARTRACK_NOTIFICATION_END", text)
               original_send_telegram(text)
 
+          def describe_response(prefix, response):
+              body_sample = response.text[:300].replace("\n", " ").replace("\r", " ")
+              server = response.headers.get("server", "")
+              x_cache = response.headers.get("x-cache", "")
+              via = response.headers.get("via", "")
+              logger.info(
+                  "%s status=%s server=%s x_cache=%s via=%s body_sample=%s",
+                  prefix,
+                  response.status_code,
+                  server,
+                  x_cache,
+                  via,
+                  body_sample,
+              )
+              return " ".join([server, x_cache, via, body_sample]).lower()
+
+          def search_page_url(spec):
+              payload = {
+                  "type": "car",
+                  "action": spec.action,
+                  "title": spec.label,
+                  "toggle": {},
+                  "layer": "",
+                  "sort": spec.sort,
+              }
+              return "https://car.encar.com/list/car?page=1&search=" + quote(
+                  json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+              )
+
+          def probe_direct_page(spec):
+              if upstream["page_probe_done"]:
+                  return
+              upstream["page_probe_done"] = True
+              try:
+                  url = search_page_url(spec)
+                  response = browser_session.get(
+                      url,
+                      headers=watcher.PAGE_HEADERS,
+                      timeout=(8, 12),
+                      allow_redirects=True,
+                  )
+                  describe_response("ENCAR_PAGE_RESPONSE", response)
+                  ids = sorted(set(re.findall(r"(?:cars/detail/|carid=|\\\"Id\\\"\\s*:)\\s*(\\d{7,9})", response.text)))[:20]
+                  logger.info("ENCAR_PAGE_IDS_FOUND count=%d sample=%s", len(ids), ids[:10])
+              except Exception as exc:
+                  logger.warning("ENCAR_PAGE_PROBE_FAILED error_type=%s error=%s", type(exc).__name__, exc)
+
           def diagnostic_api_get(session, params):
               attempts = 2
               last_error = None
               for attempt in range(attempts):
                   try:
-                      response = session.get(
+                      response = browser_session.get(
                           watcher.API_URL,
                           params=params,
                           headers=watcher.API_HEADERS,
                           timeout=(8, 12),
                       )
-                      body_sample = response.text[:300].replace("\n", " ").replace("\r", " ")
-                      server = response.headers.get("server", "")
-                      x_cache = response.headers.get("x-cache", "")
-                      via = response.headers.get("via", "")
-                      logger.info(
-                          "ENCAR_API_RESPONSE attempt=%d status=%s server=%s x_cache=%s via=%s body_sample=%s",
-                          attempt + 1,
-                          response.status_code,
-                          server,
-                          x_cache,
-                          via,
-                          body_sample,
-                      )
-                      marker = " ".join([server, x_cache, via, body_sample]).lower()
+                      marker = describe_response(f"ENCAR_API_RESPONSE attempt={attempt + 1}", response)
                       if response.status_code == 403 and (
                           "cloudfront" in marker or "the request could not be satisfied" in marker
                       ):
                           upstream["cloudfront_403"] = True
                       if response.status_code != 200:
-                          raise RuntimeError(f"Search API HTTP {response.status_code}; body={body_sample}")
+                          raise RuntimeError(f"Search API HTTP {response.status_code}")
                       data = response.json()
                       if not isinstance(data, dict):
                           raise RuntimeError("Search API returned non-object JSON")
                       return data
-                  except (requests.RequestException, ValueError, RuntimeError) as exc:
+                  except Exception as exc:
                       last_error = exc
                       logger.warning(
                           "ENCAR_API_ATTEMPT_FAILED attempt=%d/%d error_type=%s error=%s",
@@ -187,12 +227,16 @@ jobs:
           def circuit_process_search(*args, **kwargs):
               spec = kwargs.get("spec") or args[3]
               if upstream["cloudfront_403"]:
+                  probe_direct_page(spec)
                   logger.warning(
                       "Skipping %s because Encar CloudFront 403 was already detected in this run",
                       spec.label,
                   )
                   return None, True, False
-              return original_process_search(*args, **kwargs)
+              count, failed, changed = original_process_search(*args, **kwargs)
+              if failed and upstream["cloudfront_403"]:
+                  probe_direct_page(spec)
+              return count, failed, changed
 
           watcher.send_telegram = logged_send_telegram
           watcher.api_get = diagnostic_api_get
@@ -202,9 +246,7 @@ jobs:
               watcher.run_watch(dry_run=False)
           except RuntimeError:
               if upstream["cloudfront_403"]:
-                  logger.warning(
-                      "Encar CloudFront 403 detected. State preserved; exiting successfully to avoid repeated GitHub failure emails."
-                  )
+                  logger.warning("Encar CloudFront 403 detected after browser-like request. State preserved.")
               else:
                   raise
           PY
