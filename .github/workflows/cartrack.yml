@@ -147,13 +147,15 @@ jobs:
               server = response.headers.get("server", "")
               x_cache = response.headers.get("x-cache", "")
               via = response.headers.get("via", "")
+              set_cookie = "yes" if response.headers.get("set-cookie") else "no"
               logger.info(
-                  "%s status=%s server=%s x_cache=%s via=%s body_sample=%s",
+                  "%s status=%s server=%s x_cache=%s via=%s set_cookie=%s body_sample=%s",
                   prefix,
                   response.status_code,
                   server,
                   x_cache,
                   via,
+                  set_cookie,
                   body_sample,
               )
               return " ".join([server, x_cache, via, body_sample]).lower()
@@ -171,10 +173,11 @@ jobs:
                   json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
               )
 
-          def probe_direct_page(spec):
-              if upstream["page_probe_done"]:
+          def probe_direct_page(spec, prefix="ENCAR_PAGE_RESPONSE"):
+              if upstream["page_probe_done"] and prefix == "ENCAR_PAGE_RESPONSE":
                   return
-              upstream["page_probe_done"] = True
+              if prefix == "ENCAR_PAGE_RESPONSE":
+                  upstream["page_probe_done"] = True
               try:
                   url = search_page_url(spec)
                   response = browser_session.get(
@@ -183,11 +186,30 @@ jobs:
                       timeout=(8, 12),
                       allow_redirects=True,
                   )
-                  describe_response("ENCAR_PAGE_RESPONSE", response)
+                  describe_response(prefix, response)
                   ids = sorted(set(re.findall(r"(?:cars/detail/|carid=|\\\"Id\\\"\\s*:)\\s*(\\d{7,9})", response.text)))[:20]
-                  logger.info("ENCAR_PAGE_IDS_FOUND count=%d sample=%s", len(ids), ids[:10])
+                  logger.info("%s_IDS_FOUND count=%d sample=%s", prefix, len(ids), ids[:10])
               except Exception as exc:
-                  logger.warning("ENCAR_PAGE_PROBE_FAILED error_type=%s error=%s", type(exc).__name__, exc)
+                  logger.warning("%s_FAILED error_type=%s error=%s", prefix, type(exc).__name__, exc)
+
+          def bootstrap_browser_session():
+              for url in ("https://www.encar.com/", "https://car.encar.com/"):
+                  try:
+                      response = browser_session.get(
+                          url,
+                          headers=watcher.PAGE_HEADERS,
+                          timeout=(8, 12),
+                          allow_redirects=True,
+                      )
+                      describe_response(f"ENCAR_BROWSER_BOOTSTRAP {url}", response)
+                  except Exception as exc:
+                      logger.warning("ENCAR_BROWSER_BOOTSTRAP_FAILED url=%s error_type=%s error=%s", url, type(exc).__name__, exc)
+              try:
+                  config = watcher.load_config()
+                  if config.searches:
+                      probe_direct_page(config.searches[0], prefix="ENCAR_SEARCH_PAGE_BOOTSTRAP")
+              except Exception as exc:
+                  logger.warning("ENCAR_SEARCH_PAGE_BOOTSTRAP_FAILED error_type=%s error=%s", type(exc).__name__, exc)
 
           def diagnostic_api_get(session, params):
               attempts = 2
@@ -242,6 +264,7 @@ jobs:
           watcher.api_get = diagnostic_api_get
           watcher.process_search = circuit_process_search
 
+          bootstrap_browser_session()
           try:
               watcher.run_watch(dry_run=False)
           except RuntimeError:
